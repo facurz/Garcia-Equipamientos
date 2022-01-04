@@ -1,0 +1,1186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%;
+  font-family: "DM Sans", sans-serif; }
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: white; }
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white; }
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white; }
+
+p, small {
+  font-size: 1.4rem;
+  color: white; }
+
+body {
+  background-color: #583d1c; }
+
+a {
+  text-decoration: none; }
+
+.fondosTitulos {
+  background-color: rgba(129, 95, 95, 0.05);
+  border-radius: 15px;
+  height: 50px;
+  margin-bottom: 40px;
+  border: 1px solid white; }
+
+/*=========== header compartido ===========*/
+.logotipo {
+  width: 100%;
+  object-fit: cover; }
+
+.header__navBar {
+  display: none; }
+
+.header__top {
+  border-bottom: 1px solid #c36a09; }
+  .header__top--busqueda {
+    margin: 5px auto;
+    padding-left: 5px;
+    height: 35px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #c36a09;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: white;
+    outline: none; }
+  .header__top--busqueda::placeholder {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: white; }
+  .header__top span {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none; }
+
+.header__navMenu {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 100vw; }
+  .header__navMenu a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: white;
+    transition: font-size 0.3s; }
+  .header__navMenu a:hover {
+    text-shadow: black 2px 1px;
+    font-size: 2rem;
+    color: #d6a160; }
+
+.header__banner {
+  margin: 5px 0 5px 0;
+  padding-left: 0;
+  width: 100vw;
+  height: 200px;
+  background-image: url("../assets/slide.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-style: double;
+  border-color: #c36a09;
+  animation: header__banner 9s infinite linear; }
+
+@keyframes header__banner {
+  0% {
+    background-image: url("../assets/slide.jpg"); }
+  33% {
+    background-image: url("../assets/slide.jpg"); }
+  34% {
+    background-image: url("../assets/slide1.jpg"); }
+  66% {
+    background-image: url("../assets/slide1.jpg"); }
+  67% {
+    background-image: url("../assets/slide2.jpg"); }
+  100% {
+    background-image: url("../assets/slide2.jpg"); } }
+
+/*=========== estilo mainIndex ===========*/
+.presentacion {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  width: 100%;
+  height: auto; }
+  .presentacion__showroom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .presentacion__showroom h2 {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: white; }
+    .presentacion__showroom--titulo {
+      width: 100%;
+      text-align: center; }
+    .presentacion__showroom--images, .presentacion__showroom--img1, .presentacion__showroom--img2, .presentacion__showroom--img3, .presentacion__showroom--img4 {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 10px;
+      width: 150px;
+      height: 150px;
+      border: 1px solid #c36a09;
+      border-radius: 10px;
+      transform: scale(1);
+      transition: all 0.4s ease-in-out; }
+    .presentacion__showroom--img1 {
+      background-image: url("../assets/showroom01.jpg"); }
+    .presentacion__showroom--img2 {
+      background-image: url("../assets/showroom02.jpg"); }
+    .presentacion__showroom--img3 {
+      background-image: url("../assets/showroom03.jpeg"); }
+    .presentacion__showroom--img4 {
+      background-image: url("../assets/showroom04.jpeg"); }
+    .presentacion__showroom--transform:hover {
+      transform: scale(1.5); }
+
+.novedades h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: white; }
+
+.novedades__card {
+  background-color: white;
+  border: 5px ridge #c36a09;
+  border-radius: 25px;
+  overflow: auto;
+  height: 100%; }
+
+.novedades .card-body {
+  background-color: #ebe4e4; }
+
+.novedades .card-title {
+  font-size: 1.8rem; }
+
+.novedades .card-text {
+  color: black; }
+
+/*=========== footer compartido ===========*/
+footer {
+  margin: 0 auto;
+  width: 100vw;
+  background-color: #5a370c;
+  border-top: 1px solid #c36a09; }
+  footer .footer__contactanos {
+    padding-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid #c36a09; }
+    footer .footer__contactanos p {
+      display: inline-block;
+      line-height: 20px; }
+    footer .footer__contactanos img {
+      display: inline-block;
+      margin: 4px 2px 0 0;
+      width: 15px;
+      height: 15px; }
+  footer .footer__seguinos {
+    padding-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid #c36a09; }
+    footer .footer__seguinos img {
+      margin: 10px;
+      width: 30px;
+      height: 30px; }
+  footer .footer__copyright {
+    padding-top: 10px;
+    text-align: center; }
+
+.whatsappFlotante {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  z-index: 100;
+  background-image: url("../assets/icons8-whatsapp-80.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 56px;
+  height: 56px; }
+
+/*=========== mainProductos ===========*/
+.mainProductos__menu a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 30px;
+  border-bottom: 1px solid white;
+  color: white; }
+
+.mainProductos__menu ul {
+  background-color: #614728;
+  width: 100%; }
+
+.mainProductos__menu--boton {
+  background-color: #614728;
+  border-color: white; }
+  .mainProductos__menu--boton:hover, .mainProductos__menu--boton :focus {
+    background-color: #524230;
+    border-color: white; }
+
+.mainProductos__items {
+  display: grid;
+  grid-template-areas: "item1 item2 item3" 
+ "item4 item5 item6";
+  grid-template-rows: 300px 300px;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  height: auto;
+  margin: 0px 20px 15px 20px; }
+
+.item-1 {
+  grid-area: "item1";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+
+.item-2 {
+  grid-area: "item2";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+
+.item-3 {
+  grid-area: "item3";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+
+.item-4 {
+  grid-area: "item4";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+
+.item-5 {
+  grid-area: "item5";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+
+.item-6 {
+  grid-area: "item6";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+
+.box {
+  background-color: white;
+  border: 5px ridge #c36a09;
+  border-radius: 25px;
+  overflow: auto; }
+
+.mainProductos__items h3 {
+  margin-top: 15px;
+  padding-top: 5px;
+  border-top: 5px solid #c36a09;
+  line-height: 1.5rem;
+  color: #292626; }
+
+.mainProductos__items h2 {
+  padding-top: 3px;
+  color: #c36a09;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 500;
+  font-size: 2.8rem; }
+
+.items__buttons button {
+  height: 36px;
+  border: 2px solid #c36a09;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #292626;
+  border-radius: 25px;
+  padding: 0 15px;
+  margin: 10px 12px; }
+
+.items__buttons button:hover {
+  cursor: pointer;
+  border: 2px outset #c36a09;
+  box-shadow: 1px 1px #b1abab; }
+
+.item1__cocinas {
+  background-image: url("../assets/categ_cocinas/Cocina_Tecnocalor_58cm_fundiciondehierrro.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__cocinas {
+  background-image: url("../assets/categ_cocinas/Cocina4Hornallas_58cm.jpeg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__cocinas {
+  background-image: url("../assets/categ_cocinas/Cocina_Depaolo_4hornallasyPlanchaConCarlitero.jpeg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__cocinas {
+  background-image: url("../assets/categ_cocinas/Cocina_Sol_Real_conparrilla_6hornallas.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__cocinas {
+  background-image: url("../assets/categ_cocinas/Cocina_Tecnocalor4_plancha_con_Carlitera.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__cocinas {
+  background-image: url("../assets/categ_cocinas/Multicocina_Tecnocaor_4H+planchayfreidora.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__anafes {
+  background-image: url("../assets/Anafes/Anafe_Morelli_Prego.png");
+  background-size: 70%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__anafes {
+  background-image: url("../assets/Anafes/Anafe_TST_Sulata_4hornallas.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__anafes {
+  background-image: url("../assets/Anafes/Anafe_TST_Sulata_2hornallas.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__anafes {
+  background-image: url("../assets/Anafes/Anafe_Vitroceramico_TST_4H.jpeg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__anafes {
+  background-image: url("../assets/Anafes/Anafe_Vitroceramico_TST_2H.jpeg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__anafes {
+  background-image: url("../assets//Anafes/Anafe_CookandFood_cf35.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__campanas {
+  background-image: url("../assets/categ_campanasPared/Campana_TST_Atuel_60m.jpg");
+  background-size: 70%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__campanas {
+  background-image: url("../assets/categ_campanasPared/Campana_TST_Traful_60m.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__campanas {
+  background-image: url("../assets/categ_campanasPared/Campana_TST_Colhue_60cm.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__campanas {
+  background-image: url("../assets/categ_campanasPared/Campana_TST_Lacar_60cm.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__campanas {
+  background-image: url("../assets/categ_campanasPared/Campana_TST_Tamel_60m.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__campanas {
+  background-image: url("../assets/categ_campanasPared/Campana_Luxorgas_Retro__900.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__hornos {
+  background-image: url("../assets/categ_hornos/Horno_electrico_TST_Donna.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__hornos {
+  background-image: url("../assets/categ_hornos/Horno_Patelero_Depaolo.jpg");
+  background-size: 80%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__hornos {
+  background-image: url("../assets/categ_hornos/Horno_Convector_electricoz10.jpeg");
+  background-size: 75%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__hornos {
+  background-image: url("../assets/categ_hornos/Horno_electrico_empotrar_TST_Fornello.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__hornos {
+  background-image: url("../assets/categ_hornos/Horno_Luxor_Gas_Garden550.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__hornos {
+  background-image: url("../assets/categ_hornos/Horno_Luxor_country.jpg");
+  background-size: 60%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__parrillas {
+  background-image: url("../assets/categ_parrillas/parrilla_sauce_60.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__parrillas {
+  background-image: url("../assets/categ_parrillas/parrillas_cf35.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__parrillas {
+  background-image: url("../assets/categ_parrillas/parrilla-a-gas-cf90.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__parrillas {
+  background-image: url("../assets/categ_parrillas/parrillas_carbon_cipres.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__parrillas {
+  background-image: url("../assets/categ_parrillas/parrilla_carbon_90cm.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__parrillas {
+  background-image: url("../assets/categ_parrillas/parrilla_gas_cf120.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__pastas {
+  background-image: url("../assets/categ_pastas/pastalinda_roja.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__pastas {
+  background-image: url("../assets/categ_pastas/pastalinda_blanca.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__pastas {
+  background-image: url("../assets/categ_pastas/raviolero.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__pastas {
+  background-image: url("../assets/categ_pastas/sobadora_RD_fideero.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__pastas {
+  background-image: url("../assets/categ_pastas/sobadora_RD_300mm.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__pastas {
+  background-image: url("../assets/categ_pastas/secapasta.jpg");
+  background-size: 70%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__balanzas {
+  background-image: url("../assets/categ_balanzas/balanza_systel_croma.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__balanzas {
+  background-image: url("../assets/categ_balanzas/cortadora_fiambre_moretti.jpg");
+  background-size: 75%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__balanzas {
+  background-image: url("../assets/categ_balanzas/balanza_quora.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__balanzas {
+  background-image: url("../assets/categ_balanzas/balanza_systel_clipse.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__balanzas {
+  background-image: url("../assets/categ_balanzas/impresor_Eco.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__balanzas {
+  background-image: url("../assets/categ_balanzas/combo_balanza_cortadora.jpeg");
+  background-size: 65%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__kamados {
+  background-image: url("../assets/categ_kamados/kamado_pampero.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__kamados {
+  background-image: url("../assets/categ_kamados/kamado_portenio.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__kamados {
+  background-image: url("../assets/categ_kamados/kamado_criollo.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__kamados {
+  background-image: url("../assets/categ_kamados/kamado_gran_criollo.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__kamados {
+  background-image: url("../assets/categ_kamados/mini_kamado_blanco.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__kamados {
+  background-image: url("../assets/categ_kamados/mini_kamado_pampero.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item1__otros {
+  background-image: url("../assets/categ_otros/cacerola_fundicion.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item2__otros {
+  background-image: url("../assets/categ_otros/wok_fundicion.jpeg");
+  background-size: 75%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item3__otros {
+  background-image: url("../assets/categ_otros/mezcladora_decarne.png");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item4__otros {
+  background-image: url("../assets/categ_otros/batidora.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item5__otros {
+  background-image: url("../assets/categ_balanzas/impresor_Eco.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+.item6__otros {
+  background-image: url("../assets/categ_balanzas/combo_balanza_cortadora.jpeg");
+  background-size: 65%;
+  position: relative;
+  top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 150px;
+  padding-bottom: 100px; }
+
+/*===========  preguntas frecuentes ===========*/
+.main__preguntas p {
+  padding: 10px 0 10px 10px;
+  line-height: 2rem;
+  text-align: left; }
+
+.main__preguntas img {
+  padding: 5px; }
+
+.accordion-button {
+  background-color: rgba(255, 255, 255, 0.03);
+  font-size: 1.8rem;
+  font-family: "DM Sans";
+  font-weight: bold;
+  color: white; }
+
+.accordion-button:hover {
+  background-color: rgba(255, 255, 255, 0.03); }
+
+.accordion-button::after {
+  background-image: url("../assets/icons8-flecha-ampliar-50.png"); }
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(255, 255, 255, 0.03);
+  font-size: 1.8rem;
+  font-family: "DM Sans";
+  font-weight: bold;
+  color: white; }
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../assets/icons8-flecha-ampliar-50.png"); }
+
+.miAcordeon {
+  background-color: rgba(255, 255, 255, 0.03); }
+
+.envios__tabla {
+  width: 300px;
+  height: 300px;
+  border: 1px double #c36a09;
+  color: white;
+  text-align: center;
+  background: linear-gradient(to bottom, #583d1c, #965d17); }
+
+.envios__tabla th {
+  font-size: 1.6rem; }
+
+.envios__tabla td {
+  font-size: 1.4rem;
+  border: 1px solid #c36a09; }
+
+/*=========== Como comprar ===========*/
+.main__comoComprar li {
+  padding: 10px 5px;
+  line-height: 2.5rem;
+  text-align: left;
+  font-size: 1.8rem;
+  color: white; }
+
+/*=========== contacto ===========*/
+.mainContacto__info p {
+  display: inline-block;
+  padding: 10px 0 10px 10px;
+  line-height: 2rem;
+  font-size: 1.6rem;
+  text-align: left; }
+
+.form__datos {
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'DM Sans';
+  font-size: 1.6rem;
+  color: white; }
+
+.btn {
+  font-family: 'DM Sans';
+  font-size: 1.6rem; }
+
+.btn-primary {
+  display: block;
+  background-color: #614728;
+  border-radius: 10px;
+  border: 1px solid white; }
+
+.btn-primary:hover {
+  background-color: #614728;
+  border-color: #965d17;
+  color: #965d17; }
+
+.mainContacto__mapa {
+  width: 100%;
+  height: 65%; }
+
+@media screen and (max-width: 1024px) {
+  .mainProductos__items {
+    display: grid;
+    grid-template-areas: "item1 item2" 
+ "item3 item4" 
+ "item5 item6";
+    grid-template-rows: 300px 300px;
+    grid-template-columns: 0.7fr 0.7fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    height: auto;
+    margin: 0px 20px 15px 20px; } }
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem; }
+  h2 {
+    font-size: 1.6rem; }
+  h3 {
+    font-size: 1.4rem; }
+  p {
+    font-size: 1.2rem; }
+  .header__navMenu a {
+    font-size: 1.6rem; }
+  .header__navMenu a:hover {
+    font-size: 1.8rem; }
+  .presentacion__showroom h2 {
+    font-size: 2.2rem;
+    text-align: center; }
+  .main__comoComprar li {
+    padding: 10px 5px;
+    line-height: 2rem;
+    text-align: left;
+    font-size: 1.2rem;
+    color: white; }
+  .mainContacto__info p {
+    font-size: 1.4rem; }
+  .mainProductos__items {
+    display: grid;
+    grid-template-areas: "item1 item2" 
+ "item3 item4" 
+ "item5 item6";
+    grid-template-rows: 300px 300px;
+    grid-template-columns: 0.5fr 0.5fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    height: auto;
+    margin: 0px 20px 15px 20px; } }
+
+@media screen and (max-width: 576px) {
+  .header__navBar {
+    display: block; }
+  .navbar-toggler-icon {
+    background-image: url("../assets/hamburger-big.svg");
+    background-size: cover; }
+  .header__top {
+    border-bottom: 0; }
+  .header__navMenu {
+    display: none; }
+  .nav-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: white;
+    border-bottom: 1px solid #c36a09; }
+  .nav-link:hover {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: white;
+    border-bottom: 1px solid #c36a09; }
+  .header__top span {
+    display: none; }
+  .presentacion__showroom--transform:hover {
+    transform: none; }
+  .mainProductos__items {
+    display: grid;
+    grid-template-areas: "item1" 
+ "item2" 
+ "item3" 
+ "item4" 
+ "item5" 
+ "item6";
+    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: 250px;
+    row-gap: 10px;
+    column-gap: 10px;
+    height: auto;
+    margin: 0px 20px 15px 20px; } }
+
+  
+ /*  estilos agregados en el curso de javascript ===============================================*/
+
+#telefono::placeholder, #nombre::placeholder, #consulta::placeholder {
+  color: red;
+}
+
+#validacionRegistro  {
+  
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-weight: 300;
+    color: white; 
+    
+}
+
+#validacionRegistro:hover, #validacionIngreso:hover {
+  cursor: pointer;
+}
+
+#formRegistro {
+  display: none;
+}
+

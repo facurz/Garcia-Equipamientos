@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>García Equipamientos | Nuestra Empresa</title>
+    <meta name="description" content="GARCIA EQUIPAMIENTOS es una empresa de origen familiar con mas de 40 años de trayectoria en el rubro gastronomico. Visite nuestra tienda online para conocer todos nuestros productos.">
+    <meta name="keywords" content="EQUIPAMIENTOS GASTRONOMICOS, COCINAS, ANAFES, TIENDA ONLINE, HORNOS, HORNOS PIZEROS, GASTRONOMIA, CAMPANAS, HELADERAS">
+    
+    <!-- link a bootstraps -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;900&display=swap"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        
+        <!-- display block para breackpoint menor a 576.
+        Componente navbar de Bootstrap ------------------------------------------------------------------->
+        <nav class="navbar navbar-expand-sm header__navBar">
+            <div class="container-fluid">
+              <a class="navbar-brand mx-0" href="#"><img class="logotipo" src="./assets/logotipo_small.png" alt="Logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" id="btnMenuIndexMobile" href="#">Nuestra Empresa</a>
+                        <a class="nav-link" id="btnMenuProductosMobile" href=".#">Productos</a>
+                        <a class="nav-link" id="btnMenuPreguntasMobile" href="#">Preguntas Frecuentes</a>
+                        <a class="nav-link" id="btnMenuComoComprarMobile" href="#">Como Comprar</a>
+                        <a class="nav-link" id="btnMenuContactoMobile" href="#">Contacto</a>
+                    </div>
+                </div>
+            </div>
+          </nav>
+
+          <!-- display none para breackpoint menor a 576px
+          Maquetación con Grilla de Bootstraps ---------------------------------------------------------->
+        <div class="container-fluid">
+            <div class="row header__top">
+                <div class="col-4 d-none d-sm-block">
+                    <img class="logotipo" src="assets/logotipo.png" alt="Logo">
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <!-- <form id="formBuscar"> -->
+                        <!-- <div class="formBusqueda"> -->
+                            <input id="inputBusqueda" class="header__top--busqueda" type="text" onkeypress="validar(event)"  placeholder="que estas buscando..." >
+                        <!-- </div> -->
+                        <!-- <div class="formBusqueda"> -->
+                            <!-- <button id="btnBuscar" class="btn btn-primary container-fluid" type="submit">Buscar</button> -->
+                        <!-- </div> -->
+                    <!-- </form> -->
+                </div>
+                <div class="col-2 d-flex justify-content-around align-items-center">
+                    <a id="btnMenuLogin" href="#"><img src="./assets/account_circle_white_24dp.svg" alt="login"><span>Cuenta</span></a>
+                    <a id="btnMenuCerrar" href="#"><img src="./assets/account_circle_white_24dp.svg" alt="login"><span id="usuarioActual"></span></a>
+                    <a id="btnCarrito" href="#" data-bs-toggle="modal" data-bs-target="#carritoModal"><img  src="assets/shopping_cart_white_24dp.svg" alt="carrito"><span id="contador">Carrito</span></a> 
+                </div> 
+            </div>
+        </div>
+
+        <!-- display none para breackpoint menor a 576 -------------------------------------------------->
+       <nav>
+            <ul class="header__navMenu">
+                <li><a id="btnMenuIndex" href="#">Nuestra Empresa</a></li>
+                <li><a id="btnMenuProductos" href="#">Productos</a></li>
+                <li><a id="btnMenuPreguntas" href="#">Preguntas Frecuentes</a></li>
+                <li><a id="btnMenuComoComprar" href="#">Como Comprar</a></li>
+                <li><a id="btnMenuContacto" href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__banner"></div>
+    
+    </header>
+
+    <!-- en el main están los divs de todas las páginas. Desde js se cambiarán los displays correspondientes -->
+    <main>  
+        <!-- página Login -------------------------------------------------------------------------->
+        <div id="loginPage">                         
+            <section class="container-fluid mainContacto__info">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 pt-3 fondosTitulos">
+                        <h1>Registro Usuario</h1>
+                    </div>
+                </div>
+                <div class="row">
+                                   
+            
+                    <div class="col-sm-5 offset-sm-1 col-12 text-center pt-0 mainContacto__formulario">
+                        <h2 id="validacionIngreso" >Ingresar</h2>
+                        <form id="formIngreso">
+                            <div class="form__datos">
+                                <label for="nombreUsuario" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombreUsuario" placeholder="">
+                            </div>
+                            <div class="form__datos">
+                                <label for="claveUsuario" class="form-label">Clave</label>
+                                <input type="password"  class="form-control" id="claveUsuario" placeholder="">
+                            </div>
+                            <div class="form__datos">
+                                <button id="btnIngreso" class="btn btn-primary container-fluid" type="submit">Enviar</button>
+                            </div>
+                        </form> 
+                        <a id="validacionRegistro">Registrarse</a>
+                        <form id="formRegistro" class="pt-4 ">
+                            <div class="form__datos">
+                                <label for="nombreRegistro" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombreRegistro" placeholder="">
+                            </div>
+                            <div class="form__datos">
+                                <label for="claveRegistro" class="form-label">Clave</label>
+                                <input type="password"  class="form-control" id="claveRegistro" placeholder="">
+                            </div>
+                            <div class="form__datos">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailRegistro" placeholder="nombre@email.com">
+                            </div>
+                            <div class="form__datos">
+                                <button id="btnRegistro" class="btn btn-primary container-fluid" type="submit">Enviar</button>
+                            </div>
+                        </form> 
+                    </div>
+                    
+                    <div class="col-sm-4 offset-sm-1 col-12 text-start pb-4">
+                        <div>
+                            <img src="./assets/whatsapp-logo.svg" alt="whatsapp"><p>+54 341 6226509</p>
+                        </div>
+                        <div>
+                            <img src="./assets/email_white_24dp.svg" alt="mail"><p>garciaequipamientos@gmail.com</p>
+                        </div>
+                        <div>
+                            <img src="./assets/location_on_white_24dp.svg" alt="direccion"><p>Casa central: Galvez 1423, Rosario.</p>
+                        </div>
+                        <iframe class="mainContacto__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.352471270334!2d-60.65062598524093!3d-32.96810138091474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7aba0f0b6dced%3A0x43f01d81937c007d!2sG%C3%A1lvez%201423%2C%20S2001NWI%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1625515321071!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>           
+                </div>
+            </section> 
+        </div>
+
+        <!-- Modal Carrito de compras -------------------------------------------------------------------------->
+        <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog .modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div id="infoCarrito" class="modal-body">
+                   ... 
+                  </div>
+                  <div class="modal-footer">
+                    <button  type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="btnFinalizarCompra" type="button" class="btn btn-primary">Finalizar Compra</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        
+        <!-- página busqueda -------------------------------------------------------------------------->
+
+        <div id="busquedaPage"class="container-fluid novedades">
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 mb-4 pt-3 fondosTitulos">
+                    <h2>Productos encontrados</h2>
+                </div>
+            </div>
+            <div id="resultadoBusqueda" class="row">
+                <!-- aqui aparecen los productos encontrados -->
+            </div>   
+        </div>
+        
+        <!-- página Index -------------------------------------------------------------------------->
+        <div id="indexPage">                       
+        <section class="container-fluid pt-3 presentacion">
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 pt-3 fondosTitulos">
+                    <h1>Nuestra empresa</h1>
+                </div> 
+                <div class="col-xl-6 offset-xl-1 col-sm-6 col-12">           
+                    <p>GARCIA EQUIPAMIENTOS es una empresa de origen familiar con mas de 40 años de
+                        trayectoria en el rubro gastronomico. <br> Desde su origen nos dedicamos con fervor a lograr la
+                        satisfaccion plena de nuestros clientes.</p>
+                    <h2>Misión</h2>
+                    <p>Nuestra misión es estar en constante innovación, trabajar únicamente con las mejores
+                        marcas ofreciendo los más altos controles de calidad y garantizando parámetros de
+                        excelencia en cada hogar o comercio, atender a cada cliente de forma personalizada y
+                        amable y cumplirle en todo lo pactado.</p>
+                    <h2>Visión</h2>
+                    <p>Diferenciarse en la fabricación de artículos para gastronomía, a través de la comprensión y satisfacción de las necesidades de los consumidores, llegando a clientes fieles y selectos que elijan sus productos por su alta calidad. Con la inversión constante en tecnología para estar siempre a la altura del mercado.</p>        
+                </div>        
+                <div class="col-xl-4 col-sm-6 col-12 presentacion__showroom"> 
+                    <div class="presentacion__showroom--titulo">
+                        <small>Conoce nuestro</small>
+                        <h2>Showroom</h2> 
+                    </div>
+                    <a href="./assets/showroom01.jpg" target="blank"><div class="presentacion__showroom--img1 presentacion__showroom--transform"></div></a>
+                    <a href="./assets/showroom02.jpg" target="blank"><div class="presentacion__showroom--img2 presentacion__showroom--transform"></div></a>
+                    <a href="./assets/showroom03.jpeg" target="blank"><div class="presentacion__showroom--img3 presentacion__showroom--transform"></div></a>
+                    <a href="./assets/showroom04.jpeg" target="blank"><div class="presentacion__showroom--img4 presentacion__showroom--transform"></div></a>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid novedades">
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 mb-4 pt-3 fondosTitulos">
+                    <h2>Novedades</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card novedades__card">
+                        <img src="./assets/categ_cocinas/Cocina4Hornallas_58cm.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body ">
+                        <h5 class="card-title">Cocina 4 hornallas 58 cm.</h5>
+                        <p class="card-text">Cocina De Paolo 4 Hornallas Puerta Acero con Rejas De Hierro Enlozado. Ideal para aquellos que buscan cocinar como los mas reconocidos chefs en su casa. El gabinete en eacero y su aislacion mediante lana de vidrio te permite tener una cocina de restaurant en tu hogar.</p>
+                        <a href="#" class="btn btn-primary">VER +</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card novedades__card">
+                        <img src="./assets/categ_cocinas/Cocina_Depaolo_4hornallasyPlanchaConCarlitero.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body ">
+                        <h5 class="card-title">Cocina Depaolo 4 hornallas</h5>
+                        <p class="card-text">La cocina DePaolo de 4 hornallas con Plancha bifera tiene una gran versatilidad al tener una plancha grande apta para carnes y verduras. Te permite tener un producto de calidad profesional en tu hogar/negocio. Ademas viene con el Horno mas grande de su gama.</p>
+                        <a href="#" class="btn btn-primary">VER +</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card novedades__card">
+                        <img src="./assets/categ_campanasPared/Campana_Luxorgas_Retro__900.jpg" class="card-img-top" alt="...">
+                        <div class="card-body ">
+                        <h5 class="card-title">Campana Luxor retro 900</h5>
+                        <p class="card-text">Excelencia, fortaleza y distinción dan origen a nuestra línea de campanas extractoras. La combinación perfecta para nuestra gran variedad en diseños de cocinas. Presentan gran robustez estructural con cuerpo en acero inoxidable. Amplio stock para entrega inmediata.</p>
+                        <a href="#" class="btn btn-primary">VER +</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card novedades__card">
+                        <img src="./assets/categ_hornos/Horno_electrico_empotrar_TST_Fornello.jpg" class="card-img-top" alt="...">
+                        <div class="card-body ">
+                        <h5 class="card-title">Horno Empotrar Fornello</h5>
+                        <p class="card-text">El Horno empotrable TST Fornello le brindará a tu cocina un estilo sofisticado y te dará la posibilidad de ahorrar más espacio. Tiene 8 programas de coccion, lo que lo hace ideal para cocinar no solo preparaciones saladas como pizzas, empanadas, carnes o tartas.</p>
+                        <a href="#" class="btn btn-primary">VER +</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        </div> 
+
+        <!-- página productos ----------------------------------------------------------------------->
+        <div id="productosPage">
+            <section class="container-fluid main__productos">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 pt-3 fondosTitulos">
+                        <h1>Productos</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-12 mainProductos__menu">
+                        <div class="dropdown ps-4 mb-2">
+                            <button id="btnCategorias" class="btn btn-secondary dropdown-toggle mainProductos__menu--boton" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"  aria-expanded="false">
+                              CATEGORIAS » cocinas  
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a id="btnCocinas" class="dropdown-item" href="#" >Cocinas</a></li>
+                              <li><a id="btnCampanas1" class="dropdown-item" href="#">Campanas de Pared</a></li>
+                              <li><a id="btnCampanas2" class="dropdown-item" href="#">Campanas de Isla</a></li>
+                              <li><a id="btnAnafes" class="dropdown-item" href="#">Anafes</a></li>
+                              <li><a id="btnHornos1" class="dropdown-item" href="#">Hornos de hogar</a></li>
+                              <li><a id="btnHornos2" class="dropdown-item" href="#">Hornos pizzeros</a></li>
+                              <li><a id="btnHornos3" class="dropdown-item" href="#">Hornos convectores</a></li>
+                              <li><a id="btnParrillas" class="dropdown-item" href="#">Parrillas</a></li>
+                              <li><a id="btnPastas" class="dropdown-item" href="#">Máquinas de pastas</a></li>
+                              <li><a id="btnBalanzas" class="dropdown-item" href="#">Balanzas y cortadoras</a></li>
+                              <li><a id="btnKamados" class="dropdown-item" href="#">Kamados</a></li>
+                              <li><a id="btnOtros" class="dropdown-item" href="#">Otros</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                    <div id="cocinas" class="col-md-9 col-sm-12  justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__cocinas"></div>
+                                <h3>Cocina Tecnocalor 58 cm Fundicion de hierro</h3>
+                                <h2>$37990</h2>
+                                <div class="items__buttons">
+                                    <button id="1" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__cocinas"></div>
+                                <h3>Cocina 4 hornallas 58 cm. Stock limitado.</h3>
+                                <h2>$42990</h2>
+                                <div class="items__buttons">
+                                    <button id="2" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__cocinas"></div>
+                                <h3>Cocina Depaolo 4 hornallas y plancha con carlitero.</h3>
+                                <h2>$60500</h2>
+                                <div class="items__buttons">
+                                    <button id="3" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__cocinas"></div>
+                                <h3>Cocina Sol Real con parrilla 6 hornallas</h3>
+                                <h2>$64990</h2>
+                                <div class="items__buttons">
+                                    <button id="4" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__cocinas"></div>
+                                <h3>Cocina Tecnocalor 4 hornallas y plancha con carlitera</h3>
+                                <h2>$51490</h2>
+                                <div class="items__buttons">
+                                    <button id="5" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__cocinas"></div>
+                                <h3>Multicocina Tecnocalor 4H + plancha + freidora a gas</h3>
+                                <h2>$68490</h2>
+                                <div class="items__buttons">
+                                    <button id="6" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="campanas" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__campanas"></div>
+                                <h3>Campana Morelli Prego. Acero Inoxidable.</h3>
+                                <h2>$62590</h2>
+                                <div class="items__buttons">
+                                    <button id="7" onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__campanas"></div>
+                                <h3>Campana TST Sulata. Acero Inoxidable.</h3>
+                                <h2>$48530</h2>
+                                <div class="items__buttons">
+                                    <button id="8"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__campanas"></div>
+                                <h3>Campana TST Sulata. Acero Inoxidable.</h3>
+                                <h2>$36080</h2>
+                                <div class="items__buttons">
+                                    <button id="9"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__campanas"></div>
+                                <h3>Campana Vitrocerámico TST. Acero Inoxidable.</h3>
+                                <h2>$65990</h2>
+                                <div class="items__buttons">
+                                    <button id="10"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__campanas"></div>
+                                <h3>Campana Hafele TST. Acero Inoxidable.</h3>
+                                <h2>$57000</h2>
+                                <div class="items__buttons">
+                                    <button id="11"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__campanas"></div>
+                                <h3>Campana Cook & Food CF35. Acero Inoxidable.</h3>
+                                <h2>$34590</h2>
+                                <div class="items__buttons">
+                                    <button id="12"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div> 
+                    <div id="anafes" class="col-md-9 col-sm-12  justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__anafes"></div>
+                                <h3>Anafe Morelli Prego 900. Fundicion de Hierro</h3>
+                                <h2>$52590</h2>
+                                <div class="items__buttons">
+                                    <button id="13"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__anafes"></div>
+                                <h3>Anafe TST Sulata 4 Hornallas. Fundición de Hierro</h3>
+                                <h2>$47330</h2>
+                                <div class="items__buttons">
+                                    <button id="14"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__anafes"></div>
+                                <h3>Anafe TST Sulata 2 Hornallas. Fundición de Hierro</h3>
+                                <h2>$26080</h2>
+                                <div class="items__buttons">
+                                    <button id="15"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__anafes"></div>
+                                <h3>Anafe Vitrocerámico TST 4 Hornallas</h3>
+                                <h2>$64990</h2>
+                                <div class="items__buttons">
+                                    <button id="16"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__anafes"></div>
+                                <h3>Anafe Vitroceramico TST 2 hornallas</h3>
+                                <h2>$37000</h2>
+                                <div class="items__buttons">
+                                    <button id="17"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__anafes"></div>
+                                <h3>Anafe Cook & Food CF35. 2 Hornallas</h3>
+                                <h2>$24490</h2>
+                                <div class="items__buttons">
+                                    <button id="18"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="hornos" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__hornos"></div>
+                                <h3>Horno Electrico TST Donna. Vidrio Espejado Templado</h3>
+                                <h2>$22600</h2>
+                                <div class="items__buttons">
+                                    <button id="19"onclick="agregarProducto(this.id)">Comprar</button>
+                                   
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__hornos"></div>
+                                <h3>Horno Pastelero Depaolo 6 moldes</h3>
+                                <h2>$38000</h2>
+                                <div class="items__buttons">
+                                    <button id="20"onclick="agregarProducto(this.id)">Comprar</button>
+                                   
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__hornos"></div>
+                                <h3>Horno convector electrico Z10 Tecnocalor</h3>
+                                <h2>$69990</h2>
+                                <div class="items__buttons">
+                                    <button id="21"onclick="agregarProducto(this.id)">Comprar</button>
+                                   
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__hornos"></div>
+                                <h3>Horno Electrico Para Empotrar TST Fornello</h3>
+                                <h2>$75990</h2>
+                                <div class="items__buttons">
+                                    <button id="22"onclick="agregarProducto(this.id)">Comprar</button>
+                                   
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__hornos"></div>
+                                <h3>Horno Para Empotrar Luxor Gas Garden 550</h3>
+                                <h2>$102000</h2>
+                                <div class="items__buttons">
+                                    <button id="23"onclick="agregarProducto(this.id)">Comprar</button>
+                                   
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__hornos"></div>
+                                <h3>Horno Luxor Para Empotrar gas Country 900</h3>
+                                <h2>$124490</h2>
+                                <div class="items__buttons">
+                                    <button id="24"onclick="agregarProducto(this.id)">Comprar</button>
+                                   
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="parrillas" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__parrillas"></div>
+                                <h3>Parrilla a Gas Sauce 60 cm. Cook & Food</h3>
+                                <h2>$117300</h2>
+                                <div class="items__buttons">
+                                    <button id="25"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__parrillas"></div>
+                                <h3>Parrilla Sauce a Gas CF35. Cook & Food</h3>
+                                <h2>$32990</h2>
+                                <div class="items__buttons">
+                                    <button id="26"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__parrillas"></div>
+                                <h3>Parrilla Sauce a Gas CF90. Cook & Food</h3>
+                                <h2>$60650</h2>
+                                <div class="items__buttons">
+                                    <button id="27"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__parrillas"></div>
+                                <h3>Parrilla a Carbon Cipres. Cook & Food 60 cm</h3>
+                                <h2>$83590</h2>
+                                <div class="items__buttons">
+                                    <button id="28"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__parrillas"></div>
+                                <h3>Parrilla a Carbon Cipres. Cook & Food 90 cm</h3>
+                                <h2>$95600</h2>
+                                <div class="items__buttons">
+                                    <button id="29"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__parrillas"></div>
+                                <h3>Parrilla Sauce a gas CF 120. Cook & Food</h3>
+                                <h2>$72500</h2>
+                                <div class="items__buttons">
+                                    <button id="30"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="pastas" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__pastas"></div>
+                                <h3>Pastalinda Roja. 9 Posiciones. Ancho masa 20 cm</h3>
+                                <h2>$21300</h2>
+                                <div class="items__buttons">
+                                    <button id="31"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__pastas"></div>
+                                <h3>Pastalinda Blanca. 9 Posiciones. Ancho masa 20 cm</h3>
+                                <h2>$21300</h2>
+                                <div class="items__buttons">
+                                    <button id="32"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__pastas"></div>
+                                <h3>Accesorio Raviolero Pastalinda Original</h3>
+                                <h2>$9180</h2>
+                                <div class="items__buttons">
+                                    <button id="33"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__pastas"></div>
+                                <h3>Sobadora RD con fideero y raviolero de 300 mm</h3>
+                                <h2>$46500</h2>
+                                <div class="items__buttons">
+                                    <button id="34"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__pastas"></div>
+                                <h3>Sobadora RD con fideero 300 mm. 15 espesores</h3>
+                                <h2>$39900</h2>
+                                <div class="items__buttons">
+                                    <button id="35"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__pastas"></div>
+                                <h3>Secapasta Pastalinda Original. Altura de 40 cm</h3>
+                                <h2>$4300</h2>
+                                <div class="items__buttons">
+                                    <button id="36"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="balanzas" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__balanzas"></div>
+                                <h3>Balanza Systel Croma 30 kgs Con Bateria</h3>
+                                <h2>$18390</h2>
+                                <div class="items__buttons">
+                                    <button id="37"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__balanzas"></div>
+                                <h3>Cortadora Fiambres Moretti 330. Acero Inoxidable</h3>
+                                <h2>$68990</h2>
+                                <div class="items__buttons">
+                                    <button id="38"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__balanzas"></div>
+                                <h3>Balanza Systel Cuora con Impresor full. Acero Inoxidable</h3>
+                                <h2>$59000</h2>
+                                <div class="items__buttons">
+                                    <button id="39"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__balanzas"></div>
+                                <h3>Balanza Systel Inox. Clipse 30 kgs Con Bateria.</h3>
+                                <h2>$18990</h2>
+                                <div class="items__buttons">
+                                    <button id="40"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__balanzas"></div>
+                                <h3>Impresor Systel Eco. Ancho papel continuo 57 cm</h3>
+                                <h2>$19800</h2>
+                                <div class="items__buttons">
+                                    <button id="41"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__balanzas"></div>
+                                <h3>Combo Cortadora 330 + Balanza Systel Inoxidable</h3>
+                                <h2>$87390</h2>
+                                <div class="items__buttons">
+                                    <button id="42"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="kamados" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__kamados"></div>
+                                <h3>Kamado Argentino Asador Pampero 60cm</h3>
+                                <h2>$143990</h2>
+                                <div class="items__buttons">
+                                    <button id="43"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__kamados"></div>
+                                <h3>Kamado Argentino Asador Porteño 60cm</h3>
+                                <h2>$172900</h2>
+                                <div class="items__buttons">
+                                    <button id="44"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__kamados"></div>
+                                <h3>Kamado Argentino Asador Criollo 60cm<</h3>
+                                <h2>$191000</h2>
+                                <div class="items__buttons">
+                                    <button id="45"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__kamados"></div>
+                                <h3>Kamado Argentino Asador Gran Criollo 60cm</h3>
+                                <h2>$220300</h2>
+                                <div class="items__buttons">
+                                    <button id="46"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__kamados"></div>
+                                <h3>Kamado Argentino Mini Criollo Blanco</h3>
+                                <h2>$66300</h2>
+                                <div class="items__buttons">
+                                    <button id="47"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__kamados"></div>
+                                <h3>Kamado Argentino Mini Pampero Negro</h3>
+                                <h2>$114000</h2>
+                                <div class="items__buttons">
+                                    <button id="48"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="otros" class="col-md-9 col-sm-12 justify-content-center">
+                        <section class="mainProductos__items">
+                            <div class="item-1 box">
+                                <div class="item1__otros"></div>
+                                <h3>Cacerola de fundicion de hierro 8 lts</h3>
+                                <h2>$7990</h2>
+                                <div class="items__buttons">
+                                    <button id="49"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-2 box">
+                                <div class="item2__otros"></div>
+                                <h3>Wok de fundicion de hierro 33cm</h3>
+                                <h2>$4990</h2>
+                                <div class="items__buttons">
+                                    <button id="50"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-3 box">
+                                <div class="item3__otros"></div>
+                                <h3>Mezcladora de Carne Accesorio a Picadora 32 Electrica</h3>
+                                <h2>$36990</h2>
+                                <div class="items__buttons">
+                                    <button id="51"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-4 box">
+                                <div class="item4__otros"></div>
+                                <h3>Batidora KitchenAid 5 lts Roja</h3>
+                                <h2>$65990</h2>
+                                <div class="items__buttons">
+                                    <button id="52"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-5 box">
+                                <div class="item5__otros"></div>
+                                <h3>Impresor Systel Eco. Ancho papel continuo 57 cm</h3>
+                                <h2>$19800</h2>
+                                <div class="items__buttons">
+                                    <button id="53"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="item-6 box">
+                                <div class="item6__otros"></div>
+                                <h3>Combo Cortadora 330 + Balanza Systel Inoxidable</h3>
+                                <h2>$87390</h2>
+                                <div class="items__buttons">
+                                    <button id="54"onclick="agregarProducto(this.id)">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    </div>        
+                </div> 
+            </section>
+        </div>
+
+        <!-- página Preguntas Frecuentes ------------------------------------------------------------->
+        <div id="preguntasFrecuentesPage">                      
+            <section class="container-fluid main__preguntas">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 pt-3 fondosTitulos">
+                        <h1>Preguntas Frecuentes</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12">
+                        <h2>¿Qué formas de pago puedo aprovechar para realizar mi compra?</h2>
+                        <img src="./assets/visa@2x.png" alt="Visa">
+                        <img src="./assets/rapipago@2x.png" alt="Rapipago">
+                        <img src="./assets/banelco@2x.png" alt="Banelco">
+                        <img src="./assets/pagofacil@2x.png" alt="Pagofacil">  
+                        <img src="./assets/mercadopago@2x.png" alt="Mercadopago">
+                        <h2>¿Puedo realizar pagos en efectivo?</h2>
+                        <p>Si, claro que podes. Nos haces un deposito, transferencia bancaria o te acercas a nuestro local. Pagando en efectivo agilizas el plazo de entrega de tu producto.</p>
+                        <h2>¿Obtengo algun descuento adicional pagando en efectivo?</h2>
+                        <p>Consultalo siempre con nuestros ejecutivos de ventas, contamos con descuentos adicionales realizando pagos de contado efectivo.</p>    
+                        <h2>¿Puedo reitirar mi producto por el salon de ventas de Garcia Equipamientos?</h2>
+                        <p>Si, podes retirar vos mismo tu producto comprado ahorrandote gastos de envio. Solo tenes que acordar con el representante de ventas el dia que vas a venir a retirar.</p>
+                        <h2>¿Cuál es el costo de envío?</h2>
+                        <p>El costo de envío será confirmado por un representante de LV Equipamiento Gastronomico.</p>     
+                        <h2>¿Dónde puedo recibir mi pedido?</h2> 
+                        <p>Realizamos envíos a todo el país. Si estas en el interior llevamos tu mercaderia hasta el transporte que vos elijas.</p>
+                        <h2>¿Cuánto tarda en llegar el pedido?</h2>
+                        <p>El tiempo de entrega dependerá del tipo de envío acordado y del stock. En general la demora se encuentra entre 3 y 10 días hábiles luego de acreditado el pago. Verificar en la tabla de la derecha el tiempo aproximado de entrega</p>
+                        <h2>¿Qué debo hacer si el producto no llega en buen estado?</h2>
+                        <p>Ponte en contacto con nosotros a gequipamientos@gmail.com</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 pt-3 pb-4">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item miAcordeon">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Consulte el tiempo de envio a diferentes puntos del país:
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse miAcordeon collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body d-flex justify-content-center">
+                                    <table class="envios__tabla">
+                                        <tr>
+                                        <th>LOCALIDAD</th>
+                                        <th>TIEMPO DE ENVIO</th>
+                                        </tr>
+                                        <tr>
+                                        <td>Rosario</td>
+                                        <td>1 día</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Santa Fe</td>
+                                            <td>2 días</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Buenos Aires</td>
+                                            <td>3 días</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Córdoba</td>
+                                            <td>3 días</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Resto del país</td>
+                                            <td>5 a 10 días</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> 
+
+        <!-- página Como Comprar ----------------------------------------------------------------------->
+        <div id="comoComprarPage">                        
+            <section class="containerfluid main__comoComprar">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 pt-3 fondosTitulos">
+                        <h1>Como Comprar</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12">
+                        <ol>
+                            <li>Elige el producto que deseas comprar</li>
+                            <li>Haz clic en el botón de "Agregar al carrito". Esto agregará el producto a tu carrito y te llevará al mismo.</li>
+                            <li>Puedes seguir agregando otros productos al carrito o sino haz clic en "Iniciar Compra".</li>
+                            <li>Completa tus datos de contacto y haz clic en "Continuar".</li>
+                            <li>Ingresa la dirección a donde deseas recibir el producto. Luego haz clic en "Continuar".</li>
+                            <li>Selecciona el método de envío que desees y haz clic en "Continuar".</li>
+                            <li>Elige el medio de pago.</li>
+                            <li>Finalmente en la página de Confirmación de compra puedes revisar toda la información de la compra. Luego haz clic en "Continuar".</li>
+                            <li>Ahí serás redirigido a otra pantalla para que completes los datos sobre la forma de pago elegida. <br> Después de confirmar la compra recibirás un correo de nuestra parte, ese no será un comprobante de pago.</li>
+                            <li>Una vez acreditado el pago, haremos el envío correspondiente de los productos que hayas comprado.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="container-fluid novedades">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 mb-4 pt-3 fondosTitulos">
+                        <h2>Novedades</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card novedades__card">
+                            <img src="./assets/categ_cocinas/Cocina4Hornallas_58cm.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                            <h5 class="card-title">Cocina 4 hornallas 58 cm.</h5>
+                            <p class="card-text">Cocina De Paolo 4 Hornallas Puerta Acero con Rejas De Hierro Enlozado. Ideal para aquellos que buscan cocinar como los mas reconocidos chefs en su casa. El gabinete en eacero y su aislacion mediante lana de vidrio te permite tener una cocina de restaurant en tu hogar.</p>
+                            <a href="#" class="btn btn-primary">VER +</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card novedades__card">
+                            <img src="./assets/categ_cocinas/Cocina_Depaolo_4hornallasyPlanchaConCarlitero.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                            <h5 class="card-title">Cocina Depaolo 4 hornallas</h5>
+                            <p class="card-text">La cocina DePaolo de 4 hornallas con Plancha bifera tiene una gran versatilidad al tener una plancha grande apta para carnes y verduras. Te permite tener un producto de calidad profesional en tu hogar/negocio. Ademas viene con el Horno mas grande de su gama.</p>
+                            <a href="#" class="btn btn-primary">VER +</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card novedades__card">
+                            <img src="./assets/categ_campanasPared/Campana_Luxorgas_Retro__900.jpg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                            <h5 class="card-title">Campana Luxor retro 900</h5>
+                            <p class="card-text">Excelencia, fortaleza y distinción dan origen a nuestra línea de campanas extractoras. La combinación perfecta para nuestra gran variedad en diseños de cocinas. Presentan gran robustez estructural con cuerpo en acero inoxidable. Amplio stock permanente.</p>
+                            <a href="#" class="btn btn-primary">VER +</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card novedades__card">
+                            <img src="./assets/categ_hornos/Horno_electrico_empotrar_TST_Fornello.jpg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                            <h5 class="card-title">Horno Empotrar Fornello</h5>
+                            <p class="card-text">El Horno empotrable TST Fornello le brindará a tu cocina un estilo sofisticado y te dará la posibilidad de ahorrar más espacio. Tiene 8 programas de coccion, lo que lo hace ideal para cocinar no solo preparaciones saladas como pizzas, empanadas, carnes o tartas.</p>
+                            <a href="#" class="btn btn-primary">VER +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+        </div>
+        
+        <!-- página Contacto --------------------------------------------------------------------------->
+        <div id="contactoPage">                         
+            <section class="container-fluid mainContacto__info">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-12 text-center mt-4 pt-3 fondosTitulos">
+                        <h1>Contacto</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 offset-sm-1 col-12 text-start pb-4">
+                        <div>
+                            <img src="./assets/whatsapp-logo.svg" alt="whatsapp"><p>+54 341 6226509</p>
+                        </div>
+                        <div>
+                            <img src="./assets/email_white_24dp.svg" alt="mail"><p>garciaequipamientos@gmail.com</p>
+                        </div>
+                        <div>
+                            <img src="./assets/location_on_white_24dp.svg" alt="direccion"><p>Casa central: Galvez 1423, Rosario.</p>
+                        </div>
+                        <iframe class="mainContacto__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.352471270334!2d-60.65062598524093!3d-32.96810138091474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7aba0f0b6dced%3A0x43f01d81937c007d!2sG%C3%A1lvez%201423%2C%20S2001NWI%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1625515321071!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>                 
+            
+                    <div class="col-sm-5 offset-sm-1 col-12 text-center pt-5 mainContacto__formulario">
+                        <form id="miFormulario">
+                            <div class="form__datos">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="">
+                            </div>
+                            <div class="form__datos">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="number"  class="form-control" id="telefono" placeholder="">
+                            </div>
+                            <div class="form__datos">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="nombre@email.com">
+                            </div>
+                            <div id="validacion" class="form__datos">
+                                <label id="label" for="consulta" class="form-label">Escriba su consulta</label>
+                                <textarea class="form-control" id="consulta" rows="10"></textarea>
+                            </div>
+                            <div class="form__datos">
+                                <button class="btn btn-primary container-fluid" type="submit">Enviar</button>
+                            </div>
+                        </form> 
+                    </div>         
+                </div>
+            </section> 
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 col-12 footer__contactanos">
+                    <h3>Contáctanos</h3>
+                    <div>
+                        <img src="./assets/whatsapp-logo.svg" alt="whatsapp"><p>+54 341 6226509</p>
+                    </div>
+                    <div>
+                        <img src="./assets/email_white_24dp.svg" alt="mail"><p>gequipamientos@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-12 footer__contactanos">
+                    <h3>Encontranos</h3>
+                    <div>
+                        <img src="./assets/location_on_white_24dp.svg" alt="direccion"><p>Casa central: Galvez 1423, Rosario.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-12 footer__seguinos">
+                    <h3>Seguinos</h3>
+                    <a href="https://www.instagram.com/garcia_equipamientos/" target="blank"><img src="./assets/icons8-instagram.svg" alt="instagram"></a>
+                    <a href="https://www.facebook.com/GarciaEquip" target="blank"><img src="./assets/icons8-facebook.svg" alt="facebook"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 footer__copyright">
+                    <p>Copyright Garcia Equipamientos - 2021 - Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- whatsapp fixed ----------------------------------------------------------------------->
+    <a href="https://api.whatsapp.com/send?phone=<+54 9 341 590-1487>"><div class="whatsappFlotante"></div></a>
+    
+    <!-- script para bootstraps 5.1----------------------------------------------------------------->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <!-- script para sweetalert----------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+    <!-- scripts locales------------------------------------------------------------------------>
+    <script src="./js/librerias/jquery-3.6.0.min.js"></script>
+    <script src="./js/app-login.js"></script>
+    <script src="./js/app-navegacion.js"></script>
+    <script src="./js/app-formContacto.js"></script>
+    <script src="./js/app-carrito.js"></script>
+    <script src="./js/app-busqueda.js"></script>
+    
+    
+  
+
+</body>
+</html>
