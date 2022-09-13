@@ -1,4 +1,5 @@
-# PROYECTO PARA EL CURSO DE JAVASCRIPT
+# Curso Javascript: proyecto Ecommerce
+https://facurz.github.io/Garcia-Equipamientos/
 
 ### LENGUAJES UTILIZADOS:
 
