@@ -5,7 +5,5 @@ https://facurz.github.io/Garcia-Equipamientos/
 
 * HTML
 * CSS
-* SASS
-* BOOTSTRAP
 * JAVASCRIPT
 * JQUERY
